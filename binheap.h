@@ -124,8 +124,9 @@ inline void BinHeap<T>::buildHeap(std::vector<T>& aVector) {
 
 template<class T>
 inline T BinHeap<T>::getElem(int index) {
+	checkHeap();
 	if ((index< 0) || (index>=array.size()))
-		throw std::exception("Index is out of array range");
+		throw std::out_of_range();
 	return array[index];
 }
 
