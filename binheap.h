@@ -9,8 +9,10 @@
 #define BINHEAP_H_
 #include <iostream>
 #include <vector>
-#include <exception>
+// #include <exception>
+#include <stdexcept>
 #include "basebinheap.h"
+#include "EmptyHeapException.h"
 template <class T> class BinHeap : public BaseBinHeap {
 public:
 	BinHeap();
@@ -19,7 +21,7 @@ public:
 	virtual ~BinHeap();
 	void addElem(T& newElem);
 	void deleteElem(int index);
-	T getElem(int index);
+	T getElem(size_t index);
 	int findElem(T& elem);
 	T pullMaxElem();
 	T getMaxElem();
@@ -123,10 +125,10 @@ inline void BinHeap<T>::buildHeap(std::vector<T>& aVector) {
 }
 
 template<class T>
-inline T BinHeap<T>::getElem(int index) {
+inline T BinHeap<T>::getElem(size_t index) {
 	checkHeap();
 	if ((index< 0) || (index>=array.size()))
-		throw std::out_of_range();
+		throw std::out_of_range("Binary heap index out of range!");
 	return array[index];
 }
 
@@ -156,8 +158,11 @@ inline int BinHeap<T>::findElemIndex(T& elem, int index, int length) {
 template<class T>
 inline void BinHeap<T>::printHeap() {
 	int i,length = array.size();
-	for (i=0;i<length;) {
-		std::cout<<array[i]<<"  ";
+	if (array.empty())
+		std::cout<<"Heap is empty!\n";
+	else
+		for (i=0;i<length;) {
+			std::cout<<array[i++]<<"  ";
 	}
 	std::cout<<"\n";
 }
@@ -179,7 +184,7 @@ inline T BinHeap<T>::getMaxElem() {
 template<class T>
 inline void BinHeap<T>::checkHeap() {
 	if (array.empty())
-		throw std::exception("Heap is empty!");
+		throw EmptyHeapException();
 }
 
 template<class T>

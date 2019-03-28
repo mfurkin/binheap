@@ -8,77 +8,29 @@
 #include "BinaryHeapTest.h"
 
 
-BinaryHeapTest::BinaryHeapTest() {
-	// TODO Auto-generated constructor stub
-
+BinaryHeapTest::BinaryHeapTest():count(TOTAL_TESTS_QTY),curIndex(0) {
+	testCases = new BinaryHeapTestCase* [count];
+	createCreationTests();
 }
 
 BinaryHeapTest::~BinaryHeapTest() {
-	// TODO Auto-generated destructor stub
+	if (testCases)
+		delete [] testCases;
 }
 
-void BinaryHeapTest::test_creation_from_array() {
-	int result = 0;
-	assert(result);
-}
-
-void BinaryHeapTest::test_creation_empty() {
-	int result = 0;
-	assert(result);
-}
-
-void BinaryHeapTest::test_creation__copy() {
-	int result = 0;
-	assert(result);
-}
-
-void BinaryHeapTest::test_adding_elem_max() {
-	int result = 0;
-	assert(result);
-
-}
-
-void BinaryHeapTest::test_adding_elem_mid() {
-	int result = 0;
-	assert(result);
-}
-
-void BinaryHeapTest::test_adding_elem_last() {
-	int result = 0;
-	assert(result);
-}
-
-void BinaryHeapTest::test_elem_found() {
-	int result = 0;
-	assert(result);
-}
-
-void BinaryHeapTest::test_elem_not_found() {
-	int result = 0;
-	assert(result);
-}
-
-void BinaryHeapTest::test_find_from_empty() {
-	int result = 0;
-	assert(result);
-}
-
-void BinaryHeapTest::test_delete_from_empty() {
-	int result = 0;
-	assert(result);
-}
-
-void BinaryHeapTest::test_extract_from_empty() {
-	int result = 0;
-	assert(result);
-}
-
-void BinaryHeapTest::test_get_max_from_empty() {
-	int result = 0;
-	assert(result);
+void BinaryHeapTest::testsCreation() {
+	std::cout<<"Creation tests started\n";
+	testCases[ARRAY_CREATION_TEST]->test();
+	testCases[COPY_CREATION_TEST]->test();
+	testCases[EMPTY_CREATION_TEST]->test();
 }
 
 void BinaryHeapTest::testAll() {
-	int result = 0;
-	assert(result);
+	testsCreation();
+}
+
+void BinaryHeapTest::createCreationTests() {
+	testCases[ARRAY_CREATION_TEST] = new ArrayCreationTestCase();
+	testCases[COPY_CREATION_TEST] = new CopyCreationTestCase();
+	testCases[EMPTY_CREATION_TEST] = new EmptyCreationTestCase();
 }

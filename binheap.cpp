@@ -8,5 +8,6 @@
 #include "BinaryHeapTest.h"
 int main () {
 	BinaryHeapTest test;
+	test.testAll();
 }
 
