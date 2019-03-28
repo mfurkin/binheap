@@ -5,9 +5,8 @@
  *      Author: mikhailf
  */
 
-#include "binheap.h"
+#include "BinaryHeapTest.h"
 int main () {
-	std::vector<int> arr = {1,3,5,7,9,11,13,15,17};
-	BinHeap<int> heap(arr);
+	BinaryHeapTest test;
 }
 

@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../BinaryHeapTest.cpp \
 ../basebinheap.cpp \
 ../binheap.cpp 
 
 OBJS += \
+./BinaryHeapTest.o \
 ./basebinheap.o \
 ./binheap.o 
 
 CPP_DEPS += \
+./BinaryHeapTest.d \
 ./basebinheap.d \
 ./binheap.d 
 
