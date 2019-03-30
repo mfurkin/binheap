@@ -23,6 +23,16 @@ CPP_SRCS += \
 ../DeletingTestCase.cpp \
 ../EmptyCreationTestCase.cpp \
 ../EmptyHeapException.cpp \
+../FindingInEmptyTestCase.cpp \
+../FindingLastTestCase.cpp \
+../FindingMaxTestCase.cpp \
+../FindingMidTestCase.cpp \
+../FindingTestCase.cpp \
+../NegativeFindingTestCase.cpp \
+../NotFoundLastTestCase.cpp \
+../NotFoundMaxTestCase.cpp \
+../NotFoundMidTestCase.cpp \
+../NotFoundTestCase.cpp \
 ../RootOnlyCreationTestCase.cpp \
 ../basebinheap.cpp \
 ../binheap.cpp 
@@ -47,6 +57,16 @@ OBJS += \
 ./DeletingTestCase.o \
 ./EmptyCreationTestCase.o \
 ./EmptyHeapException.o \
+./FindingInEmptyTestCase.o \
+./FindingLastTestCase.o \
+./FindingMaxTestCase.o \
+./FindingMidTestCase.o \
+./FindingTestCase.o \
+./NegativeFindingTestCase.o \
+./NotFoundLastTestCase.o \
+./NotFoundMaxTestCase.o \
+./NotFoundMidTestCase.o \
+./NotFoundTestCase.o \
 ./RootOnlyCreationTestCase.o \
 ./basebinheap.o \
 ./binheap.o 
@@ -71,6 +91,16 @@ CPP_DEPS += \
 ./DeletingTestCase.d \
 ./EmptyCreationTestCase.d \
 ./EmptyHeapException.d \
+./FindingInEmptyTestCase.d \
+./FindingLastTestCase.d \
+./FindingMaxTestCase.d \
+./FindingMidTestCase.d \
+./FindingTestCase.d \
+./NegativeFindingTestCase.d \
+./NotFoundLastTestCase.d \
+./NotFoundMaxTestCase.d \
+./NotFoundMidTestCase.d \
+./NotFoundTestCase.d \
 ./RootOnlyCreationTestCase.d \
 ./basebinheap.d \
 ./binheap.d 

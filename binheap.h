@@ -153,7 +153,7 @@ inline int BinHeap<T>::findElem(T& elem) {
 template<class T>
 inline int BinHeap<T>::findElemIndex(T& elem, int index, int length) {
 	int result;
-	if (index <= length)
+	if (index >= length)
 		result = -1;
 	else
 		if (array[index] == elem)
@@ -162,8 +162,7 @@ inline int BinHeap<T>::findElemIndex(T& elem, int index, int length) {
 			if (array[index] < elem)
 				result = -1;
 			else {
-				int leftIndex,rightIndex;
-				result = max(findElemIndex(elem,left(index)),findElemIndex(elem,right(index)));
+				result = std::max(findElemIndex(elem,left(index),length),findElemIndex(elem,right(index),length));
 			}
 	return result;
 }

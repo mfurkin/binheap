@@ -13,6 +13,7 @@ BinaryHeapTest::BinaryHeapTest():count(TOTAL_TESTS_QTY),curIndex(0) {
 	createCreationTests();
 	createAddingTests();
 	createDeletingTests();
+	createFindingTests();
 }
 
 BinaryHeapTest::~BinaryHeapTest() {
@@ -32,6 +33,7 @@ void BinaryHeapTest::testAll() {
 	testsCreation();
 	testsAdding();
 	testsDeleting();
+	testsFinding();
 }
 
 void BinaryHeapTest::createCreationTests() {
@@ -66,12 +68,32 @@ void BinaryHeapTest::createAddingTests() {
 	testCases[ADDING_ONLY_ELEM_TEST] = new AddingOnlyTestCase();
 }
 
+void BinaryHeapTest::testsFinding() {
+	testCases[FOUND_MAX_TEST]->test();
+	testCases[FOUND_MID_TEST]->test();
+	testCases[FOUND_LAST_TEST]->test();
+	testCases[NOT_FOUND_MAX_TEST]->test();
+	testCases[NOT_FOUND_MID_TEST]->test();
+	testCases[NOT_FOUND_LAST_TEST]->test();
+	testCases[FINDING_IN_EMPTY_TEST]->test();
+}
+
 void BinaryHeapTest::createDeletingTests() {
-	std::vector<int> vect= {1,2,3,4,5,6,7};
 	testCases[DELETING_ELEM_MAX_TEST] = new DeletingMaxTestCase();
 	testCases[DELETING_ELEM_MID_TEST] = new DeletingMidTestCase();
 	testCases[DELETING_ELEM_LAST_TEST] = new DeletingLastTestCase();
 	testCases[DELETING_ONLY_ROOT_TEST] = new DeletingOnlyRootTestCase();
 	testCases[DELETING_FROM_EMPTY_TEST] = new DeletingFromEmptyTestCase();
 	testCases[DELETING_OUT_OF_RANGE_TEST] = new DeletingOutOfRangeTestCase();
+}
+
+void BinaryHeapTest::createFindingTests() {
+	std::vector<int> vec = {16,12,10,8,6,4,2};
+	testCases[FOUND_MAX_TEST] = new FindingMaxTestCase();
+	testCases[FOUND_MID_TEST] = new FindingMidTestCase();
+	testCases[FOUND_LAST_TEST] = new FindingLastTestCase();
+	testCases[NOT_FOUND_MAX_TEST] = new NotFoundMaxTestCase();
+	testCases[NOT_FOUND_MID_TEST] = new NotFoundMidTestCase();
+	testCases[NOT_FOUND_LAST_TEST] = new NotFoundLastTestCase();
+	testCases[FINDING_IN_EMPTY_TEST] = new FindingInEmptyTestCase();
 }
