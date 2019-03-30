@@ -33,9 +33,11 @@ private:
 	void swap(T& t1, T& t2);
 	void buildHeap(std::vector<T>& aVector);
 	void sift_up(int index);
+//	int getMaxIndex(std::vector<T>& aVector, int i1, int i2, int length);
 	void heapify(std::vector<T>& aVector, int length, int index);
 	int findElemIndex(T& elem, int index, int length);
-	void checkChild(std::vector<T>& aVector, int childIndex, int index, int length, int& maxIndex);
+	void checkChild(std::vector<T>& aVector, int childIndex, int length, int& maxIndex);
+	void logHeap(std::vector<T>& aVector);
 };
 
 template<class T>
@@ -88,13 +90,15 @@ inline T BinHeap<T>::pullMaxElem() {
 	return result;
 }
 
-
-
 template<class T>
 inline void BinHeap<T>::heapify(std::vector<T>& aVector, int length, int index) {
+
 	int maxIndex = index;
-	checkChild(aVector,left(index),index,length,maxIndex);
-	checkChild(aVector,right(index),index,length,maxIndex);
+
+	checkChild(aVector,left(index),length,maxIndex);
+	checkChild(aVector,right(index),length,maxIndex);
+
+
 	if (maxIndex != index) {
 		swap(aVector[index],aVector[maxIndex]);
 		heapify(aVector,length,maxIndex);
@@ -157,14 +161,7 @@ inline int BinHeap<T>::findElemIndex(T& elem, int index, int length) {
 
 template<class T>
 inline void BinHeap<T>::printHeap() {
-	int i,length = array.size();
-	if (array.empty())
-		std::cout<<"Heap is empty!\n";
-	else
-		for (i=0;i<length;) {
-			std::cout<<array[i++]<<"  ";
-	}
-	std::cout<<"\n";
+	logHeap(array);
 }
 
 template<class T>
@@ -188,9 +185,22 @@ inline void BinHeap<T>::checkHeap() {
 }
 
 template<class T>
-inline void BinHeap<T>::checkChild(std::vector<T>& aVector, int childIndex, int index, int length, int& maxIndex) {
-	if ((childIndex < length) && (aVector[index] < aVector[childIndex]))
+inline void BinHeap<T>::checkChild(std::vector<T>& aVector, int childIndex, int length, int& maxIndex) {
+	if ((childIndex < length) && (aVector[maxIndex] < aVector[childIndex]))
 		maxIndex = childIndex;
+}
+
+
+template<class T>
+inline void BinHeap<T>::logHeap(std::vector<T>& aVector) {
+	int i,length = aVector.size();
+		if (aVector.empty())
+			std::cout<<"Heap is empty!\n";
+		else
+			for (i=0;i<length;) {
+				std::cout<<aVector[i++]<<"  ";
+		}
+		std::cout<<"\n";
 }
 
 #endif /* BINHEAP_H_ */

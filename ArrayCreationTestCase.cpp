@@ -19,24 +19,21 @@ ArrayCreationTestCase::~ArrayCreationTestCase() {
 }
 
 void ArrayCreationTestCase::doTest() {
-	std::vector<int> vec = {1,2,3};
+	std::vector<int> vec = {1,2,3,4,5,6,7};
 	heap_ptr = new BinHeap<int>(vec);
 }
 
 int ArrayCreationTestCase::checkResult() {
 	int result = 0;
 	if (heap_ptr) {
-		std::vector<int> vec = {3,2,1};
-		int i,len,cur_i;
+		int sum = 0;
 		try {
 			result = 1;
-			len  = vec.size();
-			for(i=0;i<len;i++) {
-				cur_i = heap_ptr->getElem(i);
-				if (cur_i != vec[i]) {
-					result = 0;
-					break;
-				}
+			sum = calcSum(1,3,*heap_ptr);
+			result = (sum == 11);
+			if (result) {
+				sum = calcSum(3,7,*heap_ptr);
+				result = (sum == 10);
 			}
 			heap_ptr->printHeap();
 		} catch(std::out_of_range& oor) {

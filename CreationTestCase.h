@@ -17,6 +17,7 @@ public:
 	CreationTestCase(const std::string& aTestName);
 	virtual ~CreationTestCase();
 protected:
+	int calcSum(int firstIndex, int LastIndex, BinHeap<int>& heap);
 	BinHeap<int>* heap_ptr;
 };
 

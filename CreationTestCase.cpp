@@ -17,4 +17,9 @@ CreationTestCase::~CreationTestCase() {
 		delete heap_ptr;
 }
 
-
+int CreationTestCase::calcSum(int firstIndex, int lastIndex,BinHeap<int>& heap) {
+	int result = 0,i;
+	for (i=firstIndex;i<lastIndex;)
+		result += heap.getElem(i++);
+	return result;
+}

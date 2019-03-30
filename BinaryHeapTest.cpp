@@ -34,3 +34,10 @@ void BinaryHeapTest::createCreationTests() {
 	testCases[COPY_CREATION_TEST] = new CopyCreationTestCase();
 	testCases[EMPTY_CREATION_TEST] = new EmptyCreationTestCase();
 }
+
+void BinaryHeapTest::testsAdding() {
+}
+
+void BinaryHeapTest::createAddingTests() {
+
+}

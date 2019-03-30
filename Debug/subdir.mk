@@ -4,17 +4,35 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../ArrayCreationTestCase.cpp \
 ../BinaryHeapTest.cpp \
+../BinaryHeapTestCase.cpp \
+../CopyCreationTestCase.cpp \
+../CreationTestCase.cpp \
+../EmptyCreationTestCase.cpp \
+../EmptyHeapException.cpp \
 ../basebinheap.cpp \
 ../binheap.cpp 
 
 OBJS += \
+./ArrayCreationTestCase.o \
 ./BinaryHeapTest.o \
+./BinaryHeapTestCase.o \
+./CopyCreationTestCase.o \
+./CreationTestCase.o \
+./EmptyCreationTestCase.o \
+./EmptyHeapException.o \
 ./basebinheap.o \
 ./binheap.o 
 
 CPP_DEPS += \
+./ArrayCreationTestCase.d \
 ./BinaryHeapTest.d \
+./BinaryHeapTestCase.d \
+./CopyCreationTestCase.d \
+./CreationTestCase.d \
+./EmptyCreationTestCase.d \
+./EmptyHeapException.d \
 ./basebinheap.d \
 ./binheap.d 
 
