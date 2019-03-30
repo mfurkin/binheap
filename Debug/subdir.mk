@@ -31,6 +31,7 @@ CPP_SRCS += \
 ../FindingTestCase.cpp \
 ../GetMaxTestCase.cpp \
 ../NegativeFindingTestCase.cpp \
+../NegativeGetElemTestCase.cpp \
 ../NotFoundLastTestCase.cpp \
 ../NotFoundMaxTestCase.cpp \
 ../NotFoundMidTestCase.cpp \
@@ -67,6 +68,7 @@ OBJS += \
 ./FindingTestCase.o \
 ./GetMaxTestCase.o \
 ./NegativeFindingTestCase.o \
+./NegativeGetElemTestCase.o \
 ./NotFoundLastTestCase.o \
 ./NotFoundMaxTestCase.o \
 ./NotFoundMidTestCase.o \
@@ -103,6 +105,7 @@ CPP_DEPS += \
 ./FindingTestCase.d \
 ./GetMaxTestCase.d \
 ./NegativeFindingTestCase.d \
+./NegativeGetElemTestCase.d \
 ./NotFoundLastTestCase.d \
 ./NotFoundMaxTestCase.d \
 ./NotFoundMidTestCase.d \

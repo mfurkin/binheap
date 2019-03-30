@@ -16,6 +16,7 @@ BinaryHeapTest::BinaryHeapTest():count(TOTAL_TESTS_QTY),curIndex(0) {
 	createFindingTests();
 	createExtractingTests();
 	createMaxGettingTests();
+	createGetElemTests();
 }
 
 BinaryHeapTest::~BinaryHeapTest() {
@@ -38,6 +39,7 @@ void BinaryHeapTest::testAll() {
 	testsFinding();
 	testsExtracting();
 	testsMaxGetting();
+	testsGetElem();
 }
 
 void BinaryHeapTest::createCreationTests() {
@@ -117,7 +119,17 @@ void BinaryHeapTest::createExtractingTests() {
 	testCases[EXTRACT_FROM_EMPTY_TEST] = new ExtractTestCase("Extract from empty heap test",{},-1);
 }
 
+void BinaryHeapTest::testsGetElem() {
+	testCases[GET_ELEM_FROM_EMPTY_TEST]->test();
+	testCases[GET_ELEM_OUT_OF_RANGE_TEST]->test();
+}
+
 void BinaryHeapTest::createMaxGettingTests() {
 	testCases[GET_MAX_POSITIVE_TEST] = new GetMaxTestCase("Positive get max test",{1,2,3,4,5,6,7},7);
 	testCases[GET_MAX_FROM_EMPTY_TEST] = new GetMaxTestCase("Get max from empty test",{},-1);
+}
+
+void BinaryHeapTest::createGetElemTests() {
+	testCases[GET_ELEM_FROM_EMPTY_TEST] = new NegativeGetElemTestCase("Get elem from empty heap test case",{},-1,0);
+	testCases[GET_ELEM_OUT_OF_RANGE_TEST] = new NegativeGetElemTestCase("Get elem out of range test case",{1,2,3,4,5,6,7},-2,10);
 }
