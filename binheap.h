@@ -28,6 +28,7 @@ public:
 void heapSort(std::vector<T>& aVector);
 private:
 	std::vector<T> array;
+	void checkIndex(size_t index);
 	void checkHeap();
 	void swap(T& t1, T& t2);
 	void buildHeap(std::vector<T>& aVector);
@@ -72,10 +73,13 @@ inline void BinHeap<T>::addElem(T& newElem) {
 
 template<class T>
 inline void BinHeap<T>::deleteElem(int index) {
-	int i,j;
-	array[index] = array[0];
-	array[index]++;
-	sift_up(index);
+	checkHeap();
+	checkIndex(index);
+	if (index) {
+		array[index] = array[0];
+		array[index]++;
+		sift_up(index);
+	}
 	pullMaxElem();
 }
 
@@ -84,9 +88,10 @@ inline T BinHeap<T>::pullMaxElem() {
 	int len;
 	checkHeap();
 	T result = array[0];
-	array.erase(array.begin());
 	len = array.size();
 	array[0] = array[len-1];
+	array.pop_back();
+	len = array.size();
 	heapify(array,len,0);
 	return result;
 }
@@ -132,8 +137,11 @@ inline void BinHeap<T>::buildHeap(std::vector<T>& aVector) {
 template<class T>
 inline T BinHeap<T>::getElem(size_t index) {
 	checkHeap();
+	checkIndex(index);
+/*
 	if ((index< 0) || (index>=array.size()))
 		throw std::out_of_range("Binary heap index out of range!");
+*/
 	return array[index];
 }
 
@@ -191,6 +199,11 @@ inline void BinHeap<T>::checkChild(std::vector<T>& aVector, int childIndex, int 
 		maxIndex = childIndex;
 }
 
+template<class T>
+inline void BinHeap<T>::checkIndex(size_t index) {
+	if ((index< 0) || (index>=array.size()))
+		throw std::out_of_range("Binary heap index out of range!");
+}
 
 template<class T>
 inline void BinHeap<T>::logHeap(std::vector<T>& aVector) {

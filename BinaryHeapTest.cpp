@@ -12,6 +12,7 @@ BinaryHeapTest::BinaryHeapTest():count(TOTAL_TESTS_QTY),curIndex(0) {
 	testCases = new BinaryHeapTestCase* [count];
 	createCreationTests();
 	createAddingTests();
+	createDeletingTests();
 }
 
 BinaryHeapTest::~BinaryHeapTest() {
@@ -30,6 +31,7 @@ void BinaryHeapTest::testsCreation() {
 void BinaryHeapTest::testAll() {
 	testsCreation();
 	testsAdding();
+	testsDeleting();
 }
 
 void BinaryHeapTest::createCreationTests() {
@@ -46,6 +48,15 @@ void BinaryHeapTest::testsAdding() {
 	testCases[ADDING_ONLY_ELEM_TEST]->test();
 }
 
+void BinaryHeapTest::testsDeleting() {
+	testCases[DELETING_ELEM_MAX_TEST]->test();
+	testCases[DELETING_ELEM_MID_TEST]->test();
+	testCases[DELETING_ELEM_LAST_TEST]->test();
+	testCases[DELETING_ONLY_ROOT_TEST]->test();
+	testCases[DELETING_FROM_EMPTY_TEST]->test();
+	testCases[DELETING_OUT_OF_RANGE_TEST]->test();
+}
+
 void BinaryHeapTest::createAddingTests() {
 	std::vector<int> vec1 = {11,2,3,4,5,6};
 //	int elem1 = 7;
@@ -53,4 +64,14 @@ void BinaryHeapTest::createAddingTests() {
 	testCases[ADDING_ELEM_MID_TEST] = new AddingMidTestCase();
 	testCases[ADDING_ELEM_LAST_TEST] = new AddingLastTestCase();
 	testCases[ADDING_ONLY_ELEM_TEST] = new AddingOnlyTestCase();
+}
+
+void BinaryHeapTest::createDeletingTests() {
+	std::vector<int> vect= {1,2,3,4,5,6,7};
+	testCases[DELETING_ELEM_MAX_TEST] = new DeletingMaxTestCase();
+	testCases[DELETING_ELEM_MID_TEST] = new DeletingMidTestCase();
+	testCases[DELETING_ELEM_LAST_TEST] = new DeletingLastTestCase();
+	testCases[DELETING_ONLY_ROOT_TEST] = new DeletingOnlyRootTestCase();
+	testCases[DELETING_FROM_EMPTY_TEST] = new DeletingFromEmptyTestCase();
+	testCases[DELETING_OUT_OF_RANGE_TEST] = new DeletingOutOfRangeTestCase();
 }

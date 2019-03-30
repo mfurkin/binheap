@@ -19,8 +19,13 @@ void BinaryHeapTestCase::doTest() {
 }
 
 void BinaryHeapTestCase::test() {
-	doTest();
 	startingTest();
+	result = 1;
+	try {
+		doTest();
+	} catch(std::exception& e) {
+		result = 0;
+	}
 	result = checkResult();
 	assert(result);
 	std::cout<<testName<<"  test passed\n";

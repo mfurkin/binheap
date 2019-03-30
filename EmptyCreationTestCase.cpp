@@ -15,17 +15,6 @@ EmptyCreationTestCase::~EmptyCreationTestCase() {
 }
 
 int EmptyCreationTestCase::checkResult() {
-	/*
-	int result = 0;
-	if (heap_ptr) {
-		int maxElem;
-		try {
-			maxElem = heap_ptr->getMaxElem();
-			std::cout<<"Strange, we got max elem"<<maxElem<<"\n";
-		} catch(EmptyHeapException& ex) {
-			result = 1;
-		}
-	*/
 	return checkEmptyHeap();
 }
 
