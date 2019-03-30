@@ -14,6 +14,7 @@ BinaryHeapTest::BinaryHeapTest():count(TOTAL_TESTS_QTY),curIndex(0) {
 	createAddingTests();
 	createDeletingTests();
 	createFindingTests();
+	createExtractingTests();
 }
 
 BinaryHeapTest::~BinaryHeapTest() {
@@ -34,6 +35,7 @@ void BinaryHeapTest::testAll() {
 	testsAdding();
 	testsDeleting();
 	testsFinding();
+	testsExtracting();
 }
 
 void BinaryHeapTest::createCreationTests() {
@@ -87,6 +89,11 @@ void BinaryHeapTest::createDeletingTests() {
 	testCases[DELETING_OUT_OF_RANGE_TEST] = new DeletingOutOfRangeTestCase();
 }
 
+void BinaryHeapTest::testsExtracting() {
+	testCases[EXTRACT_POSITIVE_TEST]->test();
+	testCases[EXTRACT_FROM_EMPTY_TEST]->test();
+}
+
 void BinaryHeapTest::createFindingTests() {
 	std::vector<int> vec = {16,12,10,8,6,4,2};
 	testCases[FOUND_MAX_TEST] = new FindingMaxTestCase();
@@ -96,4 +103,9 @@ void BinaryHeapTest::createFindingTests() {
 	testCases[NOT_FOUND_MID_TEST] = new NotFoundMidTestCase();
 	testCases[NOT_FOUND_LAST_TEST] = new NotFoundLastTestCase();
 	testCases[FINDING_IN_EMPTY_TEST] = new FindingInEmptyTestCase();
+}
+
+void BinaryHeapTest::createExtractingTests() {
+	testCases[EXTRACT_POSITIVE_TEST] = new ExtractTestCase("Positive extracting test",{1,2,3,4,5,6,7},7);
+	testCases[EXTRACT_FROM_EMPTY_TEST] = new ExtractTestCase("Extract from empty heap test",{},-1);
 }
