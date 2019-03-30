@@ -4,6 +4,11 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../AddingLastTestCase.cpp \
+../AddingMaxTestCase.cpp \
+../AddingMidTestCase.cpp \
+../AddingOnlyTestCase.cpp \
+../AddingTestCase.cpp \
 ../ArrayCreationTestCase.cpp \
 ../BinaryHeapTest.cpp \
 ../BinaryHeapTestCase.cpp \
@@ -16,6 +21,11 @@ CPP_SRCS += \
 ../binheap.cpp 
 
 OBJS += \
+./AddingLastTestCase.o \
+./AddingMaxTestCase.o \
+./AddingMidTestCase.o \
+./AddingOnlyTestCase.o \
+./AddingTestCase.o \
 ./ArrayCreationTestCase.o \
 ./BinaryHeapTest.o \
 ./BinaryHeapTestCase.o \
@@ -28,6 +38,11 @@ OBJS += \
 ./binheap.o 
 
 CPP_DEPS += \
+./AddingLastTestCase.d \
+./AddingMaxTestCase.d \
+./AddingMidTestCase.d \
+./AddingOnlyTestCase.d \
+./AddingTestCase.d \
 ./ArrayCreationTestCase.d \
 ./BinaryHeapTest.d \
 ./BinaryHeapTestCase.d \
