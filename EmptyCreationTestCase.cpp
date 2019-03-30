@@ -9,12 +9,9 @@
 
 
 EmptyCreationTestCase::EmptyCreationTestCase():CreationTestCase("Empty creation test") {
-	// TODO Auto-generated constructor stub
-
 }
 
 EmptyCreationTestCase::~EmptyCreationTestCase() {
-	// TODO Auto-generated destructor stub
 }
 
 int EmptyCreationTestCase::checkResult() {

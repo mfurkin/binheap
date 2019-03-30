@@ -11,6 +11,7 @@ CPP_SRCS += \
 ../CreationTestCase.cpp \
 ../EmptyCreationTestCase.cpp \
 ../EmptyHeapException.cpp \
+../RootOnlyCreationTestCase.cpp \
 ../basebinheap.cpp \
 ../binheap.cpp 
 
@@ -22,6 +23,7 @@ OBJS += \
 ./CreationTestCase.o \
 ./EmptyCreationTestCase.o \
 ./EmptyHeapException.o \
+./RootOnlyCreationTestCase.o \
 ./basebinheap.o \
 ./binheap.o 
 
@@ -33,6 +35,7 @@ CPP_DEPS += \
 ./CreationTestCase.d \
 ./EmptyCreationTestCase.d \
 ./EmptyHeapException.d \
+./RootOnlyCreationTestCase.d \
 ./basebinheap.d \
 ./binheap.d 
 

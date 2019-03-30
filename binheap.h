@@ -9,7 +9,6 @@
 #define BINHEAP_H_
 #include <iostream>
 #include <vector>
-// #include <exception>
 #include <stdexcept>
 #include "basebinheap.h"
 #include "EmptyHeapException.h"
@@ -82,11 +81,13 @@ inline void BinHeap<T>::deleteElem(int index) {
 
 template<class T>
 inline T BinHeap<T>::pullMaxElem() {
+	int len;
 	checkHeap();
 	T result = array[0];
 	array.erase(array.begin());
-	array[0] = array[array.size()-1];
-	heapify(array,0);
+	len = array.size();
+	array[0] = array[len-1];
+	heapify(array,len,0);
 	return result;
 }
 

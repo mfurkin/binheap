@@ -23,6 +23,7 @@ void BinaryHeapTest::testsCreation() {
 	testCases[ARRAY_CREATION_TEST]->test();
 	testCases[COPY_CREATION_TEST]->test();
 	testCases[EMPTY_CREATION_TEST]->test();
+	testCases[ROOT_ONLY_CREATION_TEST]->test();
 }
 
 void BinaryHeapTest::testAll() {
@@ -33,6 +34,7 @@ void BinaryHeapTest::createCreationTests() {
 	testCases[ARRAY_CREATION_TEST] = new ArrayCreationTestCase();
 	testCases[COPY_CREATION_TEST] = new CopyCreationTestCase();
 	testCases[EMPTY_CREATION_TEST] = new EmptyCreationTestCase();
+	testCases[ROOT_ONLY_CREATION_TEST] = new RootOnlyCreationTestCase();
 }
 
 void BinaryHeapTest::testsAdding() {
