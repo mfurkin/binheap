@@ -9,7 +9,7 @@
 
 
 
-CreationTestCase::CreationTestCase(const std::string& aTestName):BinaryHeapTestCase(aTestName),heap_ptr(NULL) {
+CreationTestCase::CreationTestCase(const std::string& aTestName):BinaryHeapTestCase(aTestName) {
 }
 
 CreationTestCase::~CreationTestCase() {
@@ -17,9 +17,6 @@ CreationTestCase::~CreationTestCase() {
 		delete heap_ptr;
 }
 
-int CreationTestCase::calcSum(int firstIndex, int lastIndex,BinHeap<int>& heap) {
-	int result = 0,i;
-	for (i=firstIndex;i<lastIndex;)
-		result += heap.getElem(i++);
-	return result;
+int CreationTestCase::checkResult() {
+	return checkHeap(7,1,3,7,11,10);
 }

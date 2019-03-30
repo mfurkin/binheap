@@ -10,8 +10,13 @@
 #include "CopyCreationTestCase.h"
 #include "EmptyCreationTestCase.h"
 #include "RootOnlyCreationTestCase.h"
+#include "AddingMaxTestCase.h"
+#include "AddingMidTestCase.h"
+#include "AddingLastTestCase.h"
+#include "AddingOnlyTestCase.h"
 class BinaryHeapTest {
-	enum {ARRAY_CREATION_TEST=0,COPY_CREATION_TEST,EMPTY_CREATION_TEST,ROOT_ONLY_CREATION_TEST};
+	enum {ARRAY_CREATION_TEST=0,COPY_CREATION_TEST,EMPTY_CREATION_TEST,ROOT_ONLY_CREATION_TEST,
+		  ADDING_ELEM_MAX_TEST,ADDING_ELEM_MID_TEST,ADDING_ELEM_LAST_TEST,ADDING_ONLY_ELEM_TEST};
 	enum{TOTAL_TESTS_QTY=7};
 public:
 	BinaryHeapTest();

@@ -14,14 +14,9 @@ RootOnlyCreationTestCase::~RootOnlyCreationTestCase() {
 }
 
 int RootOnlyCreationTestCase::checkResult() {
-	return result;
-}
-
-void RootOnlyCreationTestCase::doTest() {
-	std::vector<int> vec = {1};
-	heap_ptr = new BinHeap<int>(vec);
+	/*
 	try {
-			result = (heap_ptr->pullMaxElem() == 1);
+		result = (heap_ptr->pullMaxElem() == 1);
 	} catch (EmptyHeapException& ex) {
 		result = 0;
 	}
@@ -31,4 +26,11 @@ void RootOnlyCreationTestCase::doTest() {
 	} catch (EmptyHeapException& ex) {
 		result = 1;
 	}
+	*/
+	return checkOnlyRootHeap();
+}
+
+void RootOnlyCreationTestCase::doTest() {
+	std::vector<int> vec = {1};
+	heap_ptr = new BinHeap<int>(vec);
 }

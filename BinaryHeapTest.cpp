@@ -11,6 +11,7 @@
 BinaryHeapTest::BinaryHeapTest():count(TOTAL_TESTS_QTY),curIndex(0) {
 	testCases = new BinaryHeapTestCase* [count];
 	createCreationTests();
+	createAddingTests();
 }
 
 BinaryHeapTest::~BinaryHeapTest() {
@@ -28,6 +29,7 @@ void BinaryHeapTest::testsCreation() {
 
 void BinaryHeapTest::testAll() {
 	testsCreation();
+	testsAdding();
 }
 
 void BinaryHeapTest::createCreationTests() {
@@ -38,8 +40,17 @@ void BinaryHeapTest::createCreationTests() {
 }
 
 void BinaryHeapTest::testsAdding() {
+	testCases[ADDING_ELEM_MAX_TEST]->test();
+	testCases[ADDING_ELEM_MID_TEST]->test();
+	testCases[ADDING_ELEM_LAST_TEST]->test();
+	testCases[ADDING_ONLY_ELEM_TEST]->test();
 }
 
 void BinaryHeapTest::createAddingTests() {
-
+	std::vector<int> vec1 = {11,2,3,4,5,6};
+//	int elem1 = 7;
+	testCases[ADDING_ELEM_MAX_TEST] = new AddingMaxTestCase();
+	testCases[ADDING_ELEM_MID_TEST] = new AddingMidTestCase();
+	testCases[ADDING_ELEM_LAST_TEST] = new AddingLastTestCase();
+	testCases[ADDING_ONLY_ELEM_TEST] = new AddingOnlyTestCase();
 }

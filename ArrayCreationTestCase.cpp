@@ -29,6 +29,7 @@ int ArrayCreationTestCase::checkResult() {
 		int sum = 0;
 		try {
 			result = 1;
+			result = (heap_ptr->getMaxElem() == 7);
 			sum = calcSum(1,3,*heap_ptr);
 			result = (sum == 11);
 			if (result) {
