@@ -7,7 +7,7 @@
 
 #include "DeletingLastTestCase.h"
 
-DeletingLastTestCase::DeletingLastTestCase() {
+DeletingLastTestCase::DeletingLastTestCase():DeletingTestCase("Deleting last test case",{7,6,5,4,3,2,1},7,6,11,9,6) {
 	// TODO Auto-generated constructor stub
 
 }
